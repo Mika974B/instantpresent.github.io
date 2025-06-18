@@ -1,20 +1,110 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Merci pour votre confiance</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Merci pour votre confiance !</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at top center, #1b1b1b, #000000);
+      color: #f8f8f8;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      color: #f8e58c;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #ffffff;
+    }
+
+    .button {
+      display: block;
+      width: 80%;
+      max-width: 300px;
+      margin: 1rem auto;
+      padding: 1rem;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .button:hover {
+      transform: scale(1.05);
+    }
+
+    .tres-satisfait {
+      background: linear-gradient(to right, #b08d57, #f0e68c);
+      color: #1b1b1b;
+      font-weight: bold;
+    }
+
+    .satisfait {
+      background: linear-gradient(to right, #dcdcdc, #aaaaaa);
+      color: #1b1b1b;
+    }
+
+    .moyen {
+      background: linear-gradient(to right, #5c3b2e, #4b2c20);
+      color: #fff;
+    }
+
+    textarea {
+      width: 80%;
+      max-width: 500px;
+      margin-top: 2rem;
+      height: 100px;
+      border-radius: 10px;
+      border: none;
+      padding: 1rem;
+      font-size: 1rem;
+      resize: none;
+    }
+
+    .submit-btn {
+      background: linear-gradient(to right, #d4af37, #c0b283);
+      color: #1b1b1b;
+      font-weight: bold;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      margin-top: 1.5rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .signature {
+      margin-top: 3rem;
+      font-family: 'Brush Script MT', cursive;
+      font-size: 1.4rem;
+      color: #f8e58c;
+      letter-spacing: 1px;
+    }
+  </style>
 </head>
-<body style="background: #1a1a1a; color: white; text-align: center; font-family: sans-serif;">
+<body>
   <h1>🙏 Merci pour votre confiance !</h1>
-  <p>Comment évalueriez-vous notre prestation ?</p>
-  <button style="padding: 10px 20px; margin: 5px;">😀 Très satisfait</button><br>
-  <button style="padding: 10px 20px; margin: 5px;">🙂 Satisfait</button><br>
-  <button style="padding: 10px 20px; margin: 5px;">😐 Moyennement satisfait</button><br>
-  <textarea placeholder="Laissez-nous un commentaire (facultatif)" style="width: 80%; margin-top: 15px;"></textarea><br>
-  <button style="padding: 10px 20px; margin-top: 10px;">Envoyer</button>
-  <footer style="margin-top: 40px; font-family: cursive;">
-    <p style="color: #d4af37;">L'Instant Présent Événementiel</p>
-  </footer>
+  <h2>Comment évalueriez-vous notre prestation ?</h2>
+
+  <button class="button tres-satisfait">😁 Très satisfait</button>
+  <button class="button satisfait">🙂 Satisfait</button>
+  <button class="button moyen">😕 Moyennement satisfait</button>
+
+  <textarea placeholder="Laissez-nous un commentaire (facultatif)"></textarea>
+  <br />
+  <button class="submit-btn">Envoyer</button>
+
+  <div class="signature">L’Instant Présent ✨ Événementiel</div>
 </body>
 </html>
