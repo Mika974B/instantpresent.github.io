@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laisser un avis - L'Instant Présent</title>
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background: #f2f6fc;
+            margin: 0;
+            padding: 2rem;
+            color: #333;
+            text-align: center;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .emoji-button {
+            font-size: 1.2rem;
+            margin: 10px;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+        }
+        .emoji-button:hover {
+            transform: scale(1.05);
+        }
+        #tres-satisfait { background-color: #d4edda; }
+        #satisfait { background-color: #fff3cd; }
+        #moyen { background-color: #f8d7da; }
+        textarea {
+            margin-top: 20px;
+            width: 90%;
+            max-width: 500px;
+            height: 100px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        button#envoyer {
+            margin-top: 20px;
+            padding: 12px 20px;
+            font-size: 1rem;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>🙏 Merci pour votre confiance !</h1>
+    <p>Comment évalueriez-vous notre prestation ?</p>
+
+    <div>
+        <button class="emoji-button" id="tres-satisfait">😁 Très satisfait</button>
+        <button class="emoji-button" id="satisfait">🙂 Satisfait</button>
+        <button class="emoji-button" id="moyen">😐 Moyennement satisfait</button>
+    </div>
+
+    <textarea placeholder="Laissez-nous un commentaire (facultatif)"></textarea><br>
+    <button id="envoyer">Envoyer</button>
+
+    <script>
+        const buttons = document.querySelectorAll(".emoji-button");
+        let selected = "";
+
+        buttons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                selected = btn.innerText;
+                buttons.forEach(b => b.style.outline = "none");
+                btn.style.outline = "3px solid #007bff";
+            });
+        });
+
+        document.getElementById("envoyer").addEventListener("click", () => {
+            // Pour simplifier : redirige vers Google pour tous les cas
+            window.location.href = "https://g.page/r/CZ1rJbvI_dmMEBM/review";
+        });
+    </script>
+</body>
+</html>
