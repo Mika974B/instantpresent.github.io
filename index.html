@@ -1,110 +1,91 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Merci pour votre confiance !</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: radial-gradient(circle at top center, #1b1b1b, #000000);
-      color: #f8f8f8;
-      text-align: center;
-      padding: 3rem 1rem;
-    }
+<meta charset="UTF-8">
+<title>Merci pour votre confiance</title>
+<style>
+body {
+background-color: #1c1c1c;
+color: #fff;
+font-family: Arial, sans-serif;
+text-align: center;
+padding-top: 50px;
+}
+h1 {
+color: gold;
+}
+.button {
+display: block;
+width: 200px;
+margin: 10px auto;
+padding: 10px;
+font-size: 16px;
+border-radius: 6px;
+border: none;
+cursor: pointer;
+}
+.tres { background-color: gold; }
+.satisfait { background-color: #dcdcdc; color: black; }
+.moyen { background-color: #a52a2a; }
 
-    h1 {
-      font-size: 2.2rem;
-      color: #f8e58c;
-      margin-bottom: 1rem;
-    }
+textarea {
+margin-top: 20px;
+width: 80%;
+height: 80px;
+border-radius: 6px;
+border: none;
+padding: 10px;
+font-size: 14px;
+}
 
-    h2 {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      color: #ffffff;
-    }
+#submitBtn {
+background-color: gold;
+margin-top: 20px;
+}
 
-    .button {
-      display: block;
-      width: 80%;
-      max-width: 300px;
-      margin: 1rem auto;
-      padding: 1rem;
-      font-size: 1.1rem;
-      border: none;
-      border-radius: 10px;
-      color: #fff;
-      cursor: pointer;
-      transition: transform 0.2s ease-in-out;
-    }
-
-    .button:hover {
-      transform: scale(1.05);
-    }
-
-    .tres-satisfait {
-      background: linear-gradient(to right, #b08d57, #f0e68c);
-      color: #1b1b1b;
-      font-weight: bold;
-    }
-
-    .satisfait {
-      background: linear-gradient(to right, #dcdcdc, #aaaaaa);
-      color: #1b1b1b;
-    }
-
-    .moyen {
-      background: linear-gradient(to right, #5c3b2e, #4b2c20);
-      color: #fff;
-    }
-
-    textarea {
-      width: 80%;
-      max-width: 500px;
-      margin-top: 2rem;
-      height: 100px;
-      border-radius: 10px;
-      border: none;
-      padding: 1rem;
-      font-size: 1rem;
-      resize: none;
-    }
-
-    .submit-btn {
-      background: linear-gradient(to right, #d4af37, #c0b283);
-      color: #1b1b1b;
-      font-weight: bold;
-      padding: 1rem 2rem;
-      font-size: 1.1rem;
-      margin-top: 1.5rem;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-
-    .signature {
-      margin-top: 3rem;
-      font-family: 'Brush Script MT', cursive;
-      font-size: 1.4rem;
-      color: #f8e58c;
-      letter-spacing: 1px;
-    }
-  </style>
+footer {
+margin-top: 50px;
+font-style: italic;
+color: #f5f5f5;
+}
+</style>
 </head>
 <body>
-  <h1>🙏 Merci pour votre confiance !</h1>
-  <h2>Comment évalueriez-vous notre prestation ?</h2>
 
-  <button class="button tres-satisfait">😁 Très satisfait</button>
-  <button class="button satisfait">🙂 Satisfait</button>
-  <button class="button moyen">😕 Moyennement satisfait</button>
+<h1>🙏 Merci pour votre confiance !</h1>
+<p>Comment évalueriez-vous notre prestation ?</p>
 
-  <textarea placeholder="Laissez-nous un commentaire (facultatif)"></textarea>
-  <br />
-  <button class="submit-btn">Envoyer</button>
+<!-- Boutons de satisfaction -->
+<label><input type="radio" name="satisfaction" value="Très satisfait"> 😁 Très satisfait</label><br>
+<label><input type="radio" name="satisfaction" value="Satisfait"> 🙂 Satisfait</label><br>
+<label><input type="radio" name="satisfaction" value="Moyennement satisfait"> 😐 Moyennement satisfait</label><br>
 
-  <div class="signature">L’Instant Présent ✨ Événementiel</div>
+<!-- Champ commentaire -->
+<textarea id="commentaire" placeholder="Laissez-nous un commentaire (facultatif)"></textarea><br>
+
+<!-- Bouton envoyer -->
+<button id="submitBtn" class="button">Envoyer</button>
+
+<footer>L’Instant Présent ✦ Événementiel</footer>
+
+<!-- Script -->
+<script>
+document.getElementById("submitBtn").addEventListener("click", function () {
+const satisfaction = document.querySelector('input[name="satisfaction"]:checked');
+const commentaire = document.getElementById("commentaire").value;
+
+if (!satisfaction) {
+alert("Merci de sélectionner une évaluation !");
+return;
+}
+
+// Ici on peut enregistrer ou envoyer les données si besoin
+console.log("Note :", satisfaction.value);
+console.log("Commentaire :", commentaire);
+
+// Redirection vers une page de remerciement
+window.location.href = "merci.html";
+});
+</script>
 </body>
 </html>
