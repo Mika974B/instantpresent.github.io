@@ -1,29 +1,64 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Merci pour votre retour !</title>
-    <style>
-        body {
-            background-color: #1c1c1c;
-            color: #f5f5f5;
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            padding: 60px 20px;
-        }
-        h1 {
-            color: gold;
-            font-size: 2.5em;
-        }
-        p {
-            font-size: 1.2em;
-            color: #ddd;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Merci pour votre retour</title>
+<style>
+body {
+margin: 0;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
+color: #f9f9f9;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 100vh;
+text-align: center;
+}
+
+h1 {
+font-size: 2.5em;
+margin-bottom: 0.4em;
+color: #FFD700;
+text-shadow: 1px 1px 3px rgba(255, 215, 0, 0.3);
+}
+
+p {
+font-size: 1.3em;
+max-width: 500px;
+margin-bottom: 2em;
+color: #ddd;
+}
+
+.signature {
+margin-top: 2em;
+font-weight: bold;
+font-size: 1.1em;
+color: #ccc;
+}
+
+.logo {
+width: 100px;
+margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+h1 {
+font-size: 2em;
+}
+
+p {
+font-size: 1em;
+}
+}
+</style>
 </head>
 <body>
-    <h1>Merci pour votre retour !</h1>
-    <p>Votre avis compte énormément pour toute l’équipe de L’Instant Présent 🎉</p>
+<img src="https://instantpresent.re/logo-lip-blanc.png" alt="Logo L’Instant Présent" class="logo">
+<h1>🙏 Merci pour votre retour !</h1>
+<p>Votre avis a bien été pris en compte. Toute l’équipe de L’Instant Présent vous remercie pour votre confiance.</p>
+<div class="signature">L’Instant Présent Événementiel ✨</div>
 </body>
 </html>
