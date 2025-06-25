@@ -2,19 +2,18 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Votre avis</title>
-  <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <title>Laissez un commentaire</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <div class="container">
-    <h1>Laissez-nous un petit mot 💬</h1>
-    <form id="reviewForm" action="https://formspree.io/f/mgegqgvy" method="POST" onsubmit="return submitReview(event)">
-      <textarea name="message" placeholder="Votre commentaire ici..." required></textarea>
-      <button type="submit" class="gold-button">Envoyer</button>
-    </form>
-  </div>
-  <script src="script.js"></script>
+<body class="dark">
+    <div class="container">
+        <h2>Merci pour votre retour 💬</h2>
+        <form action="merci.html" method="POST">
+            <label for="commentaire">Votre commentaire :</label><br>
+            <textarea id="commentaire" name="commentaire" rows="5" required></textarea><br>
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
 </body>
 </html>
