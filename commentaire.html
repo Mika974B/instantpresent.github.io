@@ -1,32 +1,20 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Laissez un commentaire</title>
-<link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Votre avis</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-<div class="container">
-<h2>Laissez-nous un petit mot ✍🏽</h2>
-<form action="https://formspree.io/f/mwkgdgnl" method="POST" onsubmit="return handleFormSubmit(event)">
-<input type="hidden" name="satisfaction" id="satisfactionInput" />
-<label for="message">Votre commentaire :</label>
-<textarea name="message" id="message" rows="4" required></textarea>
-<button type="submit">Envoyer</button>
-</form>
-</div>
-
-<script>
-document.getElementById("satisfactionInput").value = localStorage.getItem("avisSatisfaction") || "";
-
-function handleFormSubmit(event) {
-// Laisser Formspree gérer le submit, puis rediriger
-setTimeout(function () {
-window.location.href = "remerciement.html";
-}, 1000); // petit délai pour laisser le submit passer
-return true;
-}
-</script>
+  <div class="container">
+    <h1>Laissez-nous un petit mot 💬</h1>
+    <form id="reviewForm" action="https://formspree.io/f/mgegqgvy" method="POST" onsubmit="return submitReview(event)">
+      <textarea name="message" placeholder="Votre commentaire ici..." required></textarea>
+      <button type="submit" class="gold-button">Envoyer</button>
+    </form>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
