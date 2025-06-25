@@ -2,17 +2,55 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Avis client - L’Instant Présent</title>
-<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Votre avis - L’Instant Présent</title>
+<style>
+body {
+background-color: #0d0d0d;
+color: #ffd700;
+font-family: 'Segoe UI', sans-serif;
+text-align: center;
+padding: 50px 20px;
+margin: 0;
+}
+h1 {
+font-size: 2em;
+margin-bottom: 40px;
+}
+.button-container {
+display: flex;
+flex-direction: column;
+gap: 20px;
+max-width: 300px;
+margin: 0 auto;
+}
+.avis-btn {
+background: linear-gradient(145deg, #ffd700, #e6be00);
+border: none;
+border-radius: 12px;
+padding: 15px 20px;
+font-size: 1.1em;
+font-weight: bold;
+color: #000;
+box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+cursor: pointer;
+}
+.avis-btn:hover {
+transform: scale(1.05);
+box-shadow: 0 6px 14px rgba(255, 215, 0, 0.5);
+}
+</style>
 </head>
 <body>
-<div class="container">
+
 <h1>Comment avez-vous trouvé notre prestation ?</h1>
-<div class="buttons">
-<a href="commentaire.html" class="btn">🥳 Très satisfait</a>
-<a href="commentaire.html" class="btn">😊 Satisfait</a>
-<a href="commentaire.html" class="btn">😐 Moyennement satisfait</a>
+
+<div class="button-container">
+<button class="avis-btn" onclick="window.location.href='commentaire.html?avis=TresSatisfait'">🥳 Très satisfait</button>
+<button class="avis-btn" onclick="window.location.href='commentaire.html?avis=Satisfait'">😊 Satisfait</button>
+<button class="avis-btn" onclick="window.location.href='commentaire.html?avis=Moyennement'">😐 Moyennement satisfait</button>
 </div>
-</div>
+
 </body>
 </html>
