@@ -2,61 +2,29 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Laisser un avis – L’Instant Présent</title>
+<title>Votre avis – L’Instant Présent</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body {
-margin: 0;
-padding: 0;
-background: #1c1c1c;
-color: #fff;
-font-family: Arial, sans-serif;
-text-align: center;
-padding: 40px;
+body { background:#111; color:#fff; font-family:Arial,sans-serif; text-align:center; padding:40px; margin:0; }
+h1 { color:#FFD700; font-size:24px; margin-bottom:20px; }
+button {
+display:block; width:80%; max-width:300px; margin:10px auto;
+padding:14px; font-size:16px; border:none; border-radius:30px;
+cursor:pointer;
 }
-h1 {
-color: #f5c518;
-margin-bottom: 30px;
-}
-.btn {
-display: block;
-width: 80%;
-max-width: 300px;
-margin: 10px auto;
-padding: 15px 0;
-font-size: 18px;
-border-radius: 30px;
-border: none;
-color: #1c1c1c;
-cursor: pointer;
-transition: transform 0.1s;
-}
-.btn:hover { transform: scale(1.03); }
-.btn-gold { background: #f5c518; }
-.btn-silver { background: #eee; color: #1c1c1c; }
-.btn-red { background: #c0392b; color: #fff; }
-.comment {
-display: block;
-margin: 20px auto;
-width: 80%;
-max-width: 300px;
-padding: 10px;
-border: 2px solid #f5c518;
-border-radius: 8px;
-background: transparent;
-color: #fff;
-font-size: 16px;
-}
+.btn-gold { background:#FFD700; color:#111; }
+.btn-gray { background:#DDD; color:#111; }
+.btn-red { background:#C0392B; color:#fff; }
 </style>
 </head>
 <body>
-<h1>🙏 Merci pour votre confiance !</h1>
-<button class="btn btn-gold" onclick="goToMerci()">😊 Très satisfait</button>
-<button class="btn btn-silver" onclick="goToMerci()">😊 Satisfait</button>
-<button class="btn btn-red" onclick="goToMerci()">😐 Moyennement satisfait</button>
-<textarea class="comment" placeholder="Laissez-nous un commentaire (facultatif)"></textarea>
+<h1>🙏 Merci pour votre confiance !<br>Comment évalueriez-vous notre prestation ?</h1>
+<button class="btn-gold" onclick="goThanks()">😊 Très satisfait</button>
+<button class="btn-gray" onclick="goThanks()">😌 Satisfait</button>
+<button class="btn-red" onclick="goThanks()">😕 Moyennement satisfait</button>
 
 <script>
-function goToMerci() {
+function goThanks() {
 window.location.href = 'merci.html';
 }
 </script>
