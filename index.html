@@ -19,9 +19,9 @@ textarea { width:100%; padding:10px; margin:8px 0; border:2px solid #cfa84c; bor
 <div class="container">
 <h2>🙏 Merci pour votre confiance !</h2>
 <p>Comment évalueriez‑vous notre prestation ?</p>
-<button class="gold" onclick="showComment()">😊 Très satisfait</button>
-<button class="grey" onclick="showComment()">🙂 Satisfait</button>
-<button class="red" onclick="showComment()">😐 Moyen</button>
+<a href="commentaire.html?s=3"><button class="gold">😊 Très satisfait</button></a>
+<a href="commentaire.html?s=2"><button class="grey">😌 Satisfait</button></a>
+<a href="commentaire.html?s=1"><button class="red">😕 Moyennement satisfait</button></a>
 <div id="commentSection" style="display:none;">
 <textarea id="comment" placeholder="Laissez-nous un commentaire (facultatif)"></textarea>
 <button class="send" onclick="submitReview()">Envoyer</button>
