@@ -2,30 +2,45 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Votre avis – L’Instant Présent</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Merci pour votre confiance</title>
 <style>
-body { background:#111; color:#fff; font-family:Arial,sans-serif; text-align:center; padding:40px; margin:0; }
-h1 { color:#FFD700; font-size:24px; margin-bottom:20px; }
-button {
-display:block; width:80%; max-width:300px; margin:10px auto;
-padding:14px; font-size:16px; border:none; border-radius:30px;
-cursor:pointer;
-}
-.btn-gold { background:#FFD700; color:#111; }
-.btn-gray { background:#DDD; color:#111; }
-.btn-red { background:#C0392B; color:#fff; }
+body { display:flex; align-items:center; justify-content:center; min-height:100vh; margin:0; background:#111; color:#fff; font-family:Arial,sans-serif; text-align:center; }
+.container { max-width:400px; width:90%; }
+button { display:block; width:100%; padding:12px; margin:8px 0; font-size:16px; border:none; border-radius:30px; cursor:pointer; }
+.gold { background:#cfa84c; color:#111; }
+.grey { background:#ccc; color:#111; }
+.red { background:#b54025; color:#fff; }
+textarea { width:100%; padding:10px; margin:8px 0; border:2px solid #cfa84c; border-radius:5px; background:transparent; color:#fff; }
+.send { background:#cfa84c; color:#111; }
+.footer { margin-top:20px; font-size:14px; color:#aaa; }
 </style>
 </head>
 <body>
-<h1>🙏 Merci pour votre confiance !<br>Comment évalueriez-vous notre prestation ?</h1>
-<button class="btn-gold" onclick="goThanks()">😊 Très satisfait</button>
-<button class="btn-gray" onclick="goThanks()">😌 Satisfait</button>
-<button class="btn-red" onclick="goThanks()">😕 Moyennement satisfait</button>
+<div class="container">
+<h2>🙏 Merci pour votre confiance !</h2>
+<p>Comment évalueriez‑vous notre prestation ?</p>
+<button class="gold" onclick="showComment()">😊 Très satisfait</button>
+<button class="grey" onclick="showComment()">🙂 Satisfait</button>
+<button class="red" onclick="showComment()">😐 Moyen</button>
+<div id="commentSection" style="display:none;">
+<textarea id="comment" placeholder="Laissez-nous un commentaire (facultatif)"></textarea>
+<button class="send" onclick="submitReview()">Envoyer</button>
+</div>
+<div id="thankYou" style="display:none;">
+<h2>🙏 Merci pour votre retour !</h2>
+<p>Votre avis compte beaucoup pour nous.<br>Si vous souhaitez laisser un avis Google, nous revenons vers vous 😉</p>
+</div>
+<div class="footer">✨ L’Instant Présent ✦ Événementiel</div>
+</div>
 
 <script>
-function goThanks() {
-window.location.href = 'merci.html';
+function showComment() {
+document.getElementById('commentSection').style.display = 'block';
+}
+function submitReview() {
+document.querySelector('.container').scrollTo(0,0);
+document.querySelector('#commentSection').style.display = 'none';
+document.getElementById('thankYou').style.display = 'block';
 }
 </script>
 </body>
