@@ -1,44 +1,32 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Votre retour</title>
-    <style>
-        body {
-            background-color: #1c1c1c;
-            color: #fff;
-            font-family: 'Arial', sans-serif;
-            padding: 60px 20px;
-            text-align: center;
-        }
-        textarea {
-            width: 80%;
-            height: 150px;
-            border-radius: 10px;
-            padding: 15px;
-            font-size: 1em;
-        }
-        button {
-            margin-top: 20px;
-            padding: 15px 30px;
-            font-size: 1.1em;
-            background: linear-gradient(to right, gold, silver);
-            border: none;
-            border-radius: 40px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        button:hover {
-            opacity: 0.9;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Laissez un commentaire</title>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Un petit mot pour nous ?</h1>
-    <form action="https://formspree.io/f/xgegppey" method="POST">
-        <textarea name="message" placeholder="Laissez votre commentaire ici..." required></textarea><br>
-        <button type="submit">Envoyer</button>
-    </form>
+<div class="container">
+<h2>Laissez-nous un petit mot ✍🏽</h2>
+<form action="https://formspree.io/f/mwkgdgnl" method="POST" onsubmit="return handleFormSubmit(event)">
+<input type="hidden" name="satisfaction" id="satisfactionInput" />
+<label for="message">Votre commentaire :</label>
+<textarea name="message" id="message" rows="4" required></textarea>
+<button type="submit">Envoyer</button>
+</form>
+</div>
+
+<script>
+document.getElementById("satisfactionInput").value = localStorage.getItem("avisSatisfaction") || "";
+
+function handleFormSubmit(event) {
+// Laisser Formspree gérer le submit, puis rediriger
+setTimeout(function () {
+window.location.href = "remerciement.html";
+}, 1000); // petit délai pour laisser le submit passer
+return true;
+}
+</script>
 </body>
 </html>
