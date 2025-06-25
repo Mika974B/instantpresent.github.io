@@ -2,23 +2,20 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Votre avis compte</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Votre avis compte ✨</title>
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <div class="container">
 <h1>Votre avis nous est précieux ✨</h1>
-<button onclick="handleSatisfaction('Très satisfait')">Très satisfait</button>
-<button onclick="handleSatisfaction('Satisfait')">Satisfait</button>
-<button onclick="handleSatisfaction('Moyennement satisfait')">Moyennement satisfait</button>
+<div class="buttons">
+<button onclick="redirect('Très satisfait')">Très satisfait</button>
+<button onclick="redirect('Satisfait')">Satisfait</button>
+<button onclick="redirect('Moyennement satisfait')">Moyennement satisfait</button>
+</div>
 </div>
 
-<script>
-function handleSatisfaction(niveau) {
-localStorage.setItem("avisSatisfaction", niveau);
-window.location.href = "commentaire.html";
-}
-</script>
+<script src="script.js"></script>
 </body>
 </html>
