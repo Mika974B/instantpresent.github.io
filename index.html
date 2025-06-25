@@ -1,69 +1,20 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Votre avis compte ✨</title>
-<link rel="stylesheet" href="style.css" />
-<style>
-body {
-background-color: #121212;
-color: #ffd700;
-font-family: 'Arial', sans-serif;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-height: 100vh;
-margin: 0;
-text-align: center;
-}
-
-.logo {
-max-width: 160px;
-margin-bottom: 20px;
-}
-
-h1 {
-font-size: 2em;
-margin-bottom: 40px;
-}
-
-.buttons button {
-background-color: #ffd700;
-color: black;
-border: none;
-border-radius: 30px;
-padding: 12px 24px;
-margin: 10px;
-font-size: 1em;
-font-weight: bold;
-cursor: pointer;
-transition: background-color 0.3s;
-}
-
-.buttons button:hover {
-background-color: #ffcc00;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Laisser un avis - L’Instant Présent</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-<!-- Logo -->
-<img class="logo" src="https://instantpresent.re/wp-content/uploads/2023/11/cropped-logo-bleu.png" alt="Logo L'instant Présent" />
-
-<!-- Message -->
-<h1>Votre avis nous est précieux ✨</h1>
-
-<!-- Boutons -->
-<div class="buttons">
-<button onclick="redirect('Très satisfait')">Très satisfait</button>
-<button onclick="redirect('Satisfait')">Satisfait</button>
-<button onclick="redirect('Moyennement satisfait')">Moyennement satisfait</button>
-</div>
-
-<!-- Script de redirection -->
-<script src="script.js"></script>
-
+  <div class="container">
+    <h1>Comment avez-vous trouvé notre prestation ?</h1>
+    <div class="buttons">
+      <a href="commentaire.html" class="gold-button">😄 Très satisfait</a>
+      <a href="commentaire.html" class="gold-button">🙂 Satisfait</a>
+      <a href="commentaire.html" class="gold-button">😐 Moyennement satisfait</a>
+    </div>
+  </div>
 </body>
 </html>
