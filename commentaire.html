@@ -1,76 +1,60 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Votre avis compte - L’Instant Présent</title>
-    <style>
-        body {
-            background-color: #0d0d0d;
-            color: white;
-            font-family: 'Segoe UI', sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        h1 {
-            color: gold;
-            margin-bottom: 10px;
-        }
-
-        p {
-            margin-bottom: 30px;
-        }
-
-        textarea {
-            width: 80%;
-            height: 100px;
-            border: none;
-            border-radius: 10px;
-            padding: 10px;
-            font-size: 16px;
-            resize: none;
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-        }
-
-        button {
-            margin-top: 20px;
-            padding: 12px 30px;
-            background-color: gold;
-            border: none;
-            border-radius: 30px;
-            font-size: 16px;
-            font-weight: bold;
-            color: #0d0d0d;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
-            transition: all 0.3s ease;
-        }
-
-        button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 25px rgba(255, 215, 0, 0.7);
-        }
-
-        .logo {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 100px;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Laisser un commentaire</title>
+<style>
+body {
+background-color: #121212;
+color: #fff;
+font-family: 'Segoe UI', sans-serif;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+text-align: center;
+padding: 20px;
+}
+h1 {
+color: #FFD700;
+margin-bottom: 10px;
+}
+textarea {
+width: 90%;
+max-width: 500px;
+height: 120px;
+padding: 10px;
+font-size: 1rem;
+border-radius: 8px;
+border: none;
+resize: none;
+}
+button {
+margin-top: 20px;
+background-color: #FFD700;
+border: none;
+color: #000;
+font-weight: bold;
+padding: 12px 30px;
+border-radius: 6px;
+font-size: 1rem;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+button:hover {
+background-color: #e6c200;
+}
+</style>
 </head>
 <body>
-    <img class="logo" src="https://instantpresent.re/logo.png" alt="Logo L'Instant Présent">
-    <h1>Laissez un commentaire ✨</h1>
-    <p>Votre retour nous aide à nous améliorer 💬</p>
-    <form action="mailto:974instantpresent@gmail.com" method="POST" enctype="text/plain">
-        <textarea name="Commentaire" placeholder="Votre message ici..."></textarea><br>
-        <button type="submit">Envoyer mon commentaire</button>
-    </form>
+
+<h1>📝 Un petit mot pour nous ?</h1>
+<form action="https://docs.google.com/forms/d/e/1FAIpQLSeetroCjCPvGT9hUzMRLqeH3kIaGsicHpLYnR7kjWtGQuNTuQ/formResponse" method="POST" target="_self" onsubmit="setTimeout(() => { window.location.href = 'remerciement.html'; }, 100); return true;">
+<textarea name="entry.1234567890" placeholder="Laissez votre commentaire ici..." required></textarea><br>
+<button type="submit">Envoyer</button>
+</form>
+
 </body>
 </html>
