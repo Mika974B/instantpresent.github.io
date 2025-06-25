@@ -1,27 +1,28 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Votre avis nous est précieux ✨</title>
-<link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <title>Votre avis compte ✨</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<div class="container">
-<h1>Votre avis nous est précieux ✨</h1>
-<div class="buttons">
-<button onclick="redirect('Très satisfait')">Très satisfait</button>
-<button onclick="redirect('Satisfait')">Satisfait</button>
-<button onclick="redirect('Moyennement satisfait')">Moyennement satisfait</button>
-</div>
-</div>
-
-<script>
-function redirect(choice) {
-const baseUrl = "https://docs.google.com/forms/d/e/1FAIpQLSeetroCjCPvGT9hUzMRLqeH3kIaGsicHpLYnR7kjWtGQuNTuQ/viewform";
-const params = "?usp=pp_url&entry.653211358=" + encodeURIComponent(choice);
-window.location.href = baseUrl + params;
-}
-</script>
+<body class="dark">
+    <div class="container">
+        <h1>Votre avis nous est précieux ✨</h1>
+        <div class="buttons">
+            <form action="commentaire.html" method="GET">
+                <input type="hidden" name="satisfaction" value="Très satisfait">
+                <button type="submit">Très satisfait</button>
+            </form>
+            <form action="commentaire.html" method="GET">
+                <input type="hidden" name="satisfaction" value="Satisfait">
+                <button type="submit">Satisfait</button>
+            </form>
+            <form action="commentaire.html" method="GET">
+                <input type="hidden" name="satisfaction" value="Moyennement satisfait">
+                <button type="submit">Moyennement satisfait</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
