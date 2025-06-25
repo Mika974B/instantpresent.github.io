@@ -1,5 +1,5 @@
-unction redirect(satisfaction) {
+function redirect(satisfaction) {
 const encoded = encodeURIComponent(satisfaction);
-const formUrl = `https://formspree.io/f/mgegqkzq?avis=${encoded}`;
-window.location.href = formUrl;
+const formURL = `https://forms.gle/NeGgqK2q7aviss${encoded}`; // à adapter si nécessaire
+window.location.href = formURL;
 }
