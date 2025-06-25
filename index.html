@@ -1,66 +1,57 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>Avis - L’Instant Présent</title>
-<style>
-body { background:#000; color:#fff; font-family:sans-serif; text-align:center; padding:20px; }
-h1 { color:#ff0; font-size:2em; margin-bottom:1em; }
-.button-container button {
-display:inline-block; margin:10px; padding:10px 20px;
-background:linear-gradient(90deg,#ffd200,#c4c4c4); border:none; border-radius:8px;
-color:#000; font-size:1em; cursor:pointer;
-}
-#commentForm { margin-top:2em; display:none; }
-textarea { width:100%; height:100px; padding:10px; border-radius:5px; border:none; font-size:1em; }
-input[type="submit"] {
-margin-top:10px; padding:10px 20px; background:#ff0; border:none; border-radius:5px;
-font-size:1em; cursor:pointer;
-}
-#thankYou { display:none; color:#0f0; font-size:1.2em; margin-top:2em; }
-footer { margin-top:3em; color:#aaa; font-size:0.9em; }
-</style>
+    <meta charset="UTF-8">
+    <title>Laissez votre avis - L’Instant Présent</title>
+    <style>
+        body {
+            background-color: #1c1c1c;
+            color: #f5f5f5;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        h1 {
+            color: gold;
+            font-size: 2.8em;
+        }
+        .button-container {
+            margin-top: 40px;
+        }
+        .avis-button {
+            display: inline-block;
+            background: linear-gradient(to right, gold, silver);
+            border: none;
+            padding: 15px 35px;
+            margin: 15px;
+            font-size: 1.2em;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 40px;
+            text-decoration: none;
+            transition: transform 0.2s ease-in-out;
+        }
+        .avis-button:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            margin-top: 60px;
+            font-style: italic;
+            color: #ccc;
+        }
+    </style>
 </head>
 <body>
-
-<h1>Votre avis nous est précieux ✨</h1>
-
-<div class="button-container">
-<button onclick="selectLevel('Très satisfait')">Très satisfait</button>
-<button onclick="selectLevel('Satisfait')">Satisfait</button>
-<button onclick="selectLevel('Moyennement satisfait')">Moyennement satisfait</button>
-</div>
-
-<form id="commentForm">
-<h2>Laissez un petit mot 💬</h2>
-<textarea name="message" id="message" placeholder="Votre commentaire ici..."></textarea><br>
-<input type="submit" value="Envoyer">
-</form>
-
-<div id="thankYou">🙏 Merci pour votre retour !</div>
-
-<footer>
-Merci pour votre confiance ❤️<br>
-— L’Instant Présent événementiel
-</footer>
-
-<script>
-let selectedLevel = '';
-
-function selectLevel(level) {
-selectedLevel = level;
-document.getElementById('commentForm').scrollIntoView({ behavior: 'smooth' });
-}
-
-document.getElementById('commentForm').addEventListener('submit', function(e) {
-e.preventDefault();
-const comment = document.getElementById('message').value;
-const mailto = `mailto:contact@instantpresent.re?subject=Avis client&body=Satisfaction: ${encodeURIComponent(selectedLevel)}%0D%0ACommentaire: ${encodeURIComponent(comment)}`;
-window.location.href = mailto;
-document.getElementById('commentForm').style.display = 'none';
-document.getElementById('thankYou').style.display = 'block';
-});
-</script>
-
+    <h1>Comment avez-vous trouvé notre prestation ?</h1>
+    <div class="button-container">
+        <a class="avis-button" href="commentaire.html">😍 Très satisfait</a>
+        <a class="avis-button" href="commentaire.html">🙂 Satisfait</a>
+        <a class="avis-button" href="commentaire.html">😐 Moyennement satisfait</a>
+    </div>
+    <footer>
+        L’Instant Présent événementiel
+    </footer>
 </body>
 </html>
