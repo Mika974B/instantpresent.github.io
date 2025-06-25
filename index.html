@@ -76,9 +76,9 @@
   <h1>Votre avis nous est précieux ✨</h1>
 
   <div class="button-container">
-    <button class="button" onclick="document.getElementById('commentForm').scrollIntoView();">Très satisfait</button>
-    <button class="button" onclick="document.getElementById('commentForm').scrollIntoView();">Satisfait</button>
-    <button class="button" onclick="document.getElementById('commentForm').scrollIntoView();">Moyennement satisfait</button>
+    <button class="button" onclick="showComment('Très satisfait')">Très satisfait</button>
+    <button class="button" onclick="showComment('Satisfait')">Satisfait</button>
+    <button class="button" onclick="showComment('Moyennement satisfait')">Moyennement satisfait</button>
   </div>
 
   <form id="commentForm" action="mailto:contact@instantpresent.re" method="POST" enctype="text/plain">
@@ -91,5 +91,22 @@
     Merci pour votre confiance ❤️<br />
     — L’Instant Présent événementiel
   </footer>
+  <script>
+let selectedSatisfaction = '';
+
+function showComment(level) {
+selectedSatisfaction = level;
+document.getElementById('commentForm').scrollIntoView();
+}
+
+function submitReview(event) {
+event.preventDefault();
+const comment = document.getElementById('message').value;
+const mailtoLink = `mailto:contact@instantpresent.re?subject=Avis client&body=${encodeURIComponent("Satisfaction : " + selectedSatisfaction + "\nCommentaire : " + comment)}`;
+window.location.href = mailtoLink;
+}
+
+document.getElementById('commentForm').addEventListener('submit', submitReview);
+</script>
 </body>
 </html>
