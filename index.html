@@ -2,69 +2,23 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Votre avis compte</title>
+<title>Avis - L’Instant Présent</title>
 <style>
-body {
-background-color: #111;
-color: #fff;
-font-family: 'Arial', sans-serif;
-text-align: center;
-padding: 30px;
-}
-
-h1 {
-color: #ffd700;
-margin-bottom: 30px;
-font-size: 2.2em;
-}
-
+body { background:#000; color:#fff; font-family:sans-serif; text-align:center; padding:20px; }
+h1 { color:#ff0; font-size:2em; margin-bottom:1em; }
 .button-container button {
-background: linear-gradient(to bottom right, #ffd700, #ccc);
-border: none;
-padding: 15px 25px;
-margin: 10px;
-font-size: 1em;
-border-radius: 10px;
-cursor: pointer;
-width: 200px;
+display:inline-block; margin:10px; padding:10px 20px;
+background:linear-gradient(90deg,#ffd200,#c4c4c4); border:none; border-radius:8px;
+color:#000; font-size:1em; cursor:pointer;
 }
-
-form {
-margin-top: 20px;
-display: none;
-}
-
-textarea {
-width: 90%;
-height: 100px;
-padding: 10px;
-font-size: 1em;
-border-radius: 10px;
-border: none;
-}
-
+#commentForm { margin-top:2em; display:none; }
+textarea { width:100%; height:100px; padding:10px; border-radius:5px; border:none; font-size:1em; }
 input[type="submit"] {
-background-color: #ffd700;
-border: none;
-padding: 10px 20px;
-font-size: 1em;
-border-radius: 8px;
-margin-top: 15px;
-cursor: pointer;
+margin-top:10px; padding:10px 20px; background:#ff0; border:none; border-radius:5px;
+font-size:1em; cursor:pointer;
 }
-
-footer {
-margin-top: 40px;
-color: #aaa;
-font-size: 14px;
-}
-
-#thankYou {
-display: none;
-color: #0f0;
-margin-top: 20px;
-font-weight: bold;
-}
+#thankYou { display:none; color:#0f0; font-size:1.2em; margin-top:2em; }
+footer { margin-top:3em; color:#aaa; font-size:0.9em; }
 </style>
 </head>
 <body>
@@ -72,18 +26,18 @@ font-weight: bold;
 <h1>Votre avis nous est précieux ✨</h1>
 
 <div class="button-container">
-<button onclick="selectSatisfaction('Très satisfait')">Très satisfait</button>
-<button onclick="selectSatisfaction('Satisfait')">Satisfait</button>
-<button onclick="selectSatisfaction('Moyennement satisfait')">Moyennement satisfait</button>
+<button onclick="selectLevel('Très satisfait')">Très satisfait</button>
+<button onclick="selectLevel('Satisfait')">Satisfait</button>
+<button onclick="selectLevel('Moyennement satisfait')">Moyennement satisfait</button>
 </div>
 
 <form id="commentForm">
 <h2>Laissez un petit mot 💬</h2>
-<textarea id="message" placeholder="Votre commentaire ici..."></textarea><br>
+<textarea name="message" id="message" placeholder="Votre commentaire ici..."></textarea><br>
 <input type="submit" value="Envoyer">
 </form>
 
-<div id="thankYou">🙏 Merci pour votre retour !</div>
+<div id="thankYou">🙏 Merci pour votre retour !</div>
 
 <footer>
 Merci pour votre confiance ❤️<br>
@@ -91,23 +45,20 @@ Merci pour votre confiance ❤️<br>
 </footer>
 
 <script>
-let selectedSatisfaction = "";
+let selectedLevel = '';
 
-function selectSatisfaction(choice) {
-selectedSatisfaction = choice;
-document.getElementById("commentForm").style.display = "block";
-document.getElementById("message").focus();
+function selectLevel(level) {
+selectedLevel = level;
+document.getElementById('commentForm').scrollIntoView({ behavior: 'smooth' });
 }
 
-document.getElementById("commentForm").addEventListener("submit", function(event) {
-event.preventDefault();
-const message = document.getElementById("message").value;
-const mailtoLink = `mailto:contact@instantpresent.re?subject=Avis client&body=Satisfaction : ${encodeURIComponent(selectedSatisfaction)}%0D%0ACommentaire : ${encodeURIComponent(message)}`;
-window.location.href = mailtoLink;
-
-// Afficher message de remerciement
-document.getElementById("commentForm").style.display = "none";
-document.getElementById("thankYou").style.display = "block";
+document.getElementById('commentForm').addEventListener('submit', function(e) {
+e.preventDefault();
+const comment = document.getElementById('message').value;
+const mailto = `mailto:contact@instantpresent.re?subject=Avis client&body=Satisfaction: ${encodeURIComponent(selectedLevel)}%0D%0ACommentaire: ${encodeURIComponent(comment)}`;
+window.location.href = mailto;
+document.getElementById('commentForm').style.display = 'none';
+document.getElementById('thankYou').style.display = 'block';
 });
 </script>
 
