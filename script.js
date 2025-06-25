@@ -11,7 +11,7 @@ function submitReview(event) {
     }
   }).then(response => {
     if (response.ok) {
-      window.location.href = "merci.html";
+      window.location.href = 'commentaire.html';
     } else {
       alert("Une erreur est survenue. Veuillez réessayer.");
     }
