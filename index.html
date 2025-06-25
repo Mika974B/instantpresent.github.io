@@ -1,20 +1,27 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Laisser un avis - L’Instant Présent</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Votre avis nous est précieux ✨</title>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Comment avez-vous trouvé notre prestation ?</h1>
-    <div class="buttons">
-      <a href="commentaire.html" class="gold-button">😄 Très satisfait</a>
-      <a href="commentaire.html" class="gold-button">🙂 Satisfait</a>
-      <a href="commentaire.html" class="gold-button">😐 Moyennement satisfait</a>
-    </div>
-  </div>
+<div class="container">
+<h1>Votre avis nous est précieux ✨</h1>
+<div class="buttons">
+<button onclick="redirect('Très satisfait')">Très satisfait</button>
+<button onclick="redirect('Satisfait')">Satisfait</button>
+<button onclick="redirect('Moyennement satisfait')">Moyennement satisfait</button>
+</div>
+</div>
+
+<script>
+function redirect(choice) {
+const baseUrl = "https://docs.google.com/forms/d/e/1FAIpQLSeetroCjCPvGT9hUzMRLqeH3kIaGsicHpLYnR7kjWtGQuNTuQ/viewform";
+const params = "?usp=pp_url&entry.653211358=" + encodeURIComponent(choice);
+window.location.href = baseUrl + params;
+}
+</script>
 </body>
 </html>
