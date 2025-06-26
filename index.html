@@ -1,57 +1,41 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Laisser un avis - L'instant Présent</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Laissez votre avis</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <img src="https://instantpresent.re/logo.png" alt="Logo L'instant Présent">
-    </header>
-    <main>
-        <h1>Laissez-nous votre avis</h1>
-        <form id="feedbackForm">
-            <label for="name">Votre prénom ou pseudo *</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Votre adresse e-mail *</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="materiel">Que pensez-vous de notre matériel ?</label>
-            <select id="materiel" name="materiel">
-                <option value="Excellent">Excellent</option>
-                <option value="Satisfaisant">Satisfaisant</option>
-                <option value="À améliorer">À améliorer</option>
-            </select>
-
-            <label for="service">Que pensez-vous de notre service ?</label>
-            <select id="service" name="service">
-                <option value="Professionnel et chaleureux">Professionnel et chaleureux</option>
-                <option value="Correct">Correct</option>
-                <option value="Décevant">Décevant</option>
-            </select>
-
-            <label for="problem">Avez-vous rencontré des difficultés ?</label>
-            <input type="text" id="problem" name="problem">
-
-            <label for="recommend">Nous recommanderiez-vous ?</label>
-            <select id="recommend" name="recommend">
-                <option value="Oui, sans hésiter !">Oui, sans hésiter !</option>
-                <option value="Peut-être">Peut-être</option>
-                <option value="Non">Non</option>
-            </select>
-
-            <label for="comment">Un commentaire libre ?</label>
-            <textarea id="commentaire" name="commentaire" rows="4"></textarea>
-
-            <button type="submit">Envoyer mon avis</button>
-        </form>
-    </main>
-    <script src="script.js"></script>
-    <footer>
-        © 2025 L'instant Présent - Merci pour votre confiance ✨
-    </footer>
+  <div class="container">
+    <img src="logo.gif" alt="Logo animé" class="logo" />
+    <h1>Laissez-nous votre avis</h1>
+    <form id="avisForm">
+      <input type="text" placeholder="Votre prénom ou pseudo" required>
+      <input type="email" placeholder="Votre adresse e-mail" required>
+      <select required>
+        <option disabled selected>Que pensez-vous de notre matériel ?</option>
+        <option>Excellent</option>
+        <option>Correct</option>
+        <option>Décevant</option>
+      </select>
+      <select required>
+        <option disabled selected>Que pensez-vous de notre service ?</option>
+        <option>Professionnel et chaleureux</option>
+        <option>Correct</option>
+        <option>Décevant</option>
+      </select>
+      <input type="text" placeholder="Avez-vous rencontré des difficultés ?">
+      <select required>
+        <option disabled selected>Nous recommanderiez-vous ?</option>
+        <option>Oui, sans hésiter !</option>
+        <option>Peut-être</option>
+        <option>Non</option>
+      </select>
+      <textarea placeholder="Un commentaire libre ?"></textarea>
+      <button type="submit">Envoyer mon avis</button>
+    </form>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
