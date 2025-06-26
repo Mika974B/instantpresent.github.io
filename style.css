@@ -1,56 +1,89 @@
+/* Police générale */
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: url('fond.jpg') no-repeat center center fixed;
-  background-size: cover;
-  color: #fff;
+margin: 0;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background: url('fond.jpg') no-repeat center center fixed;
+background-size: cover;
+color: #ffffff;
 }
 
+/* Container principal */
 .container {
-  background: rgba(0, 0, 0, 0.7);
-  margin: 50px auto;
-  padding: 30px;
-  max-width: 500px;
-  border-radius: 10px;
-  text-align: center;
+max-width: 600px;
+margin: 5vh auto;
+padding: 2rem;
+background: rgba(0, 0, 0, 0.75);
+border-radius: 12px;
+box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+/* Logo animé */
+.logo {
+display: block;
+max-width: 180px;
+margin: 0 auto 1.5rem auto;
+animation: float 3s ease-in-out infinite;
+}
+
+/* Animation du logo */
+@keyframes float {
+0% { transform: translateY(0); }
+50% { transform: translateY(-10px); }
+100% { transform: translateY(0); }
+}
+
+/* Titre */
+h1 {
+text-align: center;
+font-size: 1.8rem;
+margin-bottom: 2rem;
+color: #f5f5f5;
+}
+
+/* Champs du formulaire */
+form input,
+form select,
+form textarea {
+width: 100%;
+margin-bottom: 1rem;
+padding: 0.75rem;
+border: none;
+border-radius: 6px;
+font-size: 1rem;
+}
+
+/* Textearea spécifique */
+form textarea {
+resize: vertical;
+height: 100px;
+}
+
+/* Bouton d’envoi */
+form button {
+background: linear-gradient(90deg, gold, goldenrod);
+color: #000;
+font-weight: bold;
+padding: 0.9rem;
+border: none;
+border-radius: 6px;
+cursor: pointer;
+font-size: 1rem;
+transition: transform 0.2s ease;
+}
+
+form button:hover {
+transform: scale(1.05);
+box-shadow: 0 0 8px gold;
+}
+
+/* Responsive mobile */
+@media screen and (max-width: 600px) {
+.container {
+margin: 2vh 1rem;
+padding: 1.5rem;
 }
 
 .logo {
-  width: 100px;
-  animation: rotateLogo 5s infinite linear;
+max-width: 140px;
 }
-
-@keyframes rotateLogo {
-  0% { transform: rotateY(0deg); }
-  100% { transform: rotateY(360deg); }
-}
-
-h1 {
-  margin-bottom: 20px;
-  color: #FFD700;
-}
-
-input, select, textarea {
-  width: 100%;
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 6px;
-  border: none;
-}
-
-button {
-  background-color: #FFD700;
-  color: #000;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
 }
