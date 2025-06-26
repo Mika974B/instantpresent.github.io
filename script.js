@@ -1,33 +1,56 @@
-document.getElementById("avisForm").addEventListener("submit", function(event){
-event.preventDefault();
+document.addEventListener("DOMContentLoaded", () => {
+const form = document.querySelector("form");
 
-// Affichage des confettis dorés
-const confettiSettings = {
-target: 'canvas',
-max: 150,
-size: 1.2,
-animate: true,
-props: ['circle'],
-colors: [
-[255,215,0], // or doré
-[255,223,0], // jaune chic
-[255,240,140] // doré clair
-]
-};
-const confetti = new ConfettiGenerator(confettiSettings);
-confetti.render();
+form.addEventListener("submit", function (e) {
+e.preventDefault();
 
+// Animation des confettis
+lancerConfettis();
+
+// Attente avant d'afficher le message de remerciement
 setTimeout(() => {
-alert("Merci pour votre avis !");
+form.innerHTML = `
+<h2 style="text-align: center; color: gold;">🎉 Merci pour votre retour !</h2>
+<p style="text-align: center;">Notre service satisfaction vous répondra si besoin.</p>
+`;
 }, 1000);
 });
 
-// Chargement de la bibliothèque Confetti
-const script = document.createElement('script');
-script.src = 'https://cdn.jsdelivr.net/npm/confetti-js@0.0.18/dist/index.min.js';
-document.head.appendChild(script);
+function lancerConfettis() {
+for (let i = 0; i < 100; i++) {
+const confetti = document.createElement("div");
+confetti.classList.add("confetti");
+document.body.appendChild(confetti);
 
-// Ajout dynamique du canvas confetti
-const canvas = document.createElement("canvas");
-canvas.id = "canvas";
-document.body.appendChild(canvas);
+confetti.style.left = Math.random() * 100 + "vw";
+confetti.style.animationDelay = Math.random() * 2 + "s";
+
+setTimeout(() => {
+confetti.remove();
+}, 5000);
+}
+}
+});
+
+// Style confettis
+const style = document.createElement('style');
+style.innerHTML = `
+.confetti {
+position: fixed;
+top: -10px;
+width: 10px;
+height: 10px;
+background: gold;
+opacity: 0.9;
+animation: fall 3s linear infinite;
+border-radius: 50%;
+z-index: 9999;
+}
+
+@keyframes fall {
+to {
+transform: translateY(100vh) rotate(360deg);
+}
+}
+`;
+document.head.appendChild(style);
