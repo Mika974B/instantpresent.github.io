@@ -1,56 +1,115 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Votre avis - L’Instant Présent</title>
-<style>
-body {
-background-color: #0d0d0d;
-color: #ffd700;
-font-family: 'Segoe UI', sans-serif;
-text-align: center;
-padding: 50px 20px;
-margin: 0;
-}
-h1 {
-font-size: 2em;
-margin-bottom: 40px;
-}
-.button-container {
-display: flex;
-flex-direction: column;
-gap: 20px;
-max-width: 300px;
-margin: 0 auto;
-}
-.avis-btn {
-background: linear-gradient(145deg, #ffd700, #e6be00);
-border: none;
-border-radius: 12px;
-padding: 15px 20px;
-font-size: 1.1em;
-font-weight: bold;
-color: #000;
-box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
-transition: transform 0.2s ease, box-shadow 0.2s ease;
-cursor: pointer;
-}
-.avis-btn:hover {
-transform: scale(1.05);
-box-shadow: 0 6px 14px rgba(255, 215, 0, 0.5);
-}
-</style>
+    <meta charset="UTF-8">
+    <title>Laisser un avis - L'instant Présent</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #111;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+        }
+        header img {
+            height: 70px;
+        }
+        main {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: #222;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #555;
+        }
+        h1 {
+            color: gold;
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+        }
+        button {
+            margin-top: 25px;
+            width: 100%;
+            padding: 12px;
+            background-color: gold;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        footer {
+            text-align: center;
+            font-size: 13px;
+            color: #999;
+            margin-top: 50px;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <img src="https://instantpresent.re/logo.png" alt="Logo L'instant Présent">
+    </header>
+    <main>
+        <h1>Laissez-nous votre avis</h1>
+        <form id="feedbackForm">
+            <label for="name">Votre prénom ou pseudo *</label>
+            <input type="text" id="name" name="name" required>
 
-<h1>Comment avez-vous trouvé notre prestation ?</h1>
+            <label for="email">Votre adresse e-mail *</label>
+            <input type="email" id="email" name="email" required>
 
-<div class="button-container">
-<button class="avis-btn" onclick="window.location.href='commentaire.html?avis=TresSatisfait'">🥳 Très satisfait</button>
-<button class="avis-btn" onclick="window.location.href='commentaire.html?avis=Satisfait'">😊 Satisfait</button>
-<button class="avis-btn" onclick="window.location.href='commentaire.html?avis=Moyennement'">😐 Moyennement satisfait</button>
-</div>
+            <label for="materiel">Que pensez-vous de notre matériel ?</label>
+            <select id="materiel" name="materiel">
+                <option value="Excellent">Excellent</option>
+                <option value="Satisfaisant">Satisfaisant</option>
+                <option value="À améliorer">À améliorer</option>
+            </select>
 
+            <label for="service">Que pensez-vous de notre service ?</label>
+            <select id="service" name="service">
+                <option value="Professionnel et chaleureux">Professionnel et chaleureux</option>
+                <option value="Correct">Correct</option>
+                <option value="Décevant">Décevant</option>
+            </select>
+
+            <label for="problem">Avez-vous rencontré des difficultés ?</label>
+            <input type="text" id="problem" name="problem">
+
+            <label for="recommend">Nous recommanderiez-vous ?</label>
+            <select id="recommend" name="recommend">
+                <option value="Oui, sans hésiter !">Oui, sans hésiter !</option>
+                <option value="Peut-être">Peut-être</option>
+                <option value="Non">Non</option>
+            </select>
+
+            <label for="comment">Un commentaire libre ?</label>
+            <textarea id="comment" name="comment" rows="4"></textarea>
+
+            <button type="submit">Envoyer mon avis</button>
+        </form>
+    </main>
+    <footer>
+        © 2025 L'instant Présent - Merci pour votre confiance ✨
+    </footer>
 </body>
 </html>
