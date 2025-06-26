@@ -7,7 +7,6 @@
 <link rel="stylesheet" href="style.css">
 </head>
   <script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.18/dist/index.min.js"></script>
-<canvas id="canvas"></canvas>
 <script>
 const confettiSettings = {
 target: 'canvas',
@@ -23,16 +22,51 @@ colors: [
 const confetti = new ConfettiGenerator(confettiSettings);
 confetti.render();
 </script>
+  <canvas id="canvas"></canvas>
 <body>
 <main>
 <h1>🙏 Merci beaucoup !</h1>
 <p>Votre avis a bien été enregistré.</p>
-<p>L’équipe de <strong>L'instant Présent</strong> vous remercie chaleureusement pour votre retour 💛</p>
-<p>Vous pouvez également nous laisser un avis public sur :</p>
-<ul style="list-style: none; padding-left: 0;">
-<a href="https://g.page/r/CfN3pGAw2PP8EB0/review" style="color: #FFD700;">Google</a>
-<a href="https://www.facebook.com/profile.php?id=61551378617240" style="color: #FFD700;">Facebook</a>
-</ul>
+
+<div id="final-message" style="opacity: 0; transition: opacity 2s ease-in; margin-top: 40px;">
+<h2 style="font-size: 2em; color: #FFD700; animation: fadeIn 2s forwards 2s;">
+À bientôt avec L’Instant Présent 👋
+</h2>
+</div>
 </main>
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+const msg = document.getElementById('final-message');
+setTimeout(() => {
+msg.style.opacity = 1;
+}, 1500); // apparition avec délai
+});
+</script>
+
+<style>
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+<canvas id="canvas"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.18/dist/index.min.js"></script>
+<script>
+const confettiSettings = {
+target: 'canvas',
+max: 150,
+animate: true,
+props: ['circle'],
+colors: [
+[255, 215, 0], // or doré
+[255, 223, 34], // jaune chic
+[246, 240, 140] // doré clair
+]
+};
+const confetti = new ConfettiGenerator(confettiSettings);
+confetti.render();
+</script>
 </body>
 </html>
