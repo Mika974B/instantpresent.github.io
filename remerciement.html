@@ -6,6 +6,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
 </head>
+  <script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.18/dist/index.min.js"></script>
+<canvas id="canvas"></canvas>
+<script>
+const confettiSettings = {
+target: 'canvas',
+max: 150,
+animate: true,
+props: ['circle'],
+colors: [
+[255, 215, 0], // or doré
+[255, 223, 34], // jaune chic
+[246, 240, 140] // doré clair
+]
+};
+const confetti = new ConfettiGenerator(confettiSettings);
+confetti.render();
+</script>
 <body>
 <main>
 <h1>🙏 Merci beaucoup !</h1>
