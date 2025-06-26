@@ -1,41 +1,48 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Laissez votre avis</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Votre avis compte - L’Instant Présent</title>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <img src="logo.gif" alt="Logo animé" class="logo" />
-    <h1>Laissez-nous votre avis</h1>
-    <form id="avisForm">
-      <input type="text" placeholder="Votre prénom ou pseudo" required>
-      <input type="email" placeholder="Votre adresse e-mail" required>
-      <select required>
-        <option disabled selected>Que pensez-vous de notre matériel ?</option>
-        <option>Excellent</option>
-        <option>Correct</option>
-        <option>Décevant</option>
-      </select>
-      <select required>
-        <option disabled selected>Que pensez-vous de notre service ?</option>
-        <option>Professionnel et chaleureux</option>
-        <option>Correct</option>
-        <option>Décevant</option>
-      </select>
-      <input type="text" placeholder="Avez-vous rencontré des difficultés ?">
-      <select required>
-        <option disabled selected>Nous recommanderiez-vous ?</option>
-        <option>Oui, sans hésiter !</option>
-        <option>Peut-être</option>
-        <option>Non</option>
-      </select>
-      <textarea placeholder="Un commentaire libre ?"></textarea>
-      <button type="submit">Envoyer mon avis</button>
-    </form>
-  </div>
-  <script src="script.js"></script>
+<div class="container">
+<img src="logo_animated.gif" alt="Logo animé L’Instant Présent" class="logo animé" />
+<h1>Laissez-nous votre avis</h1>
+<form id="avisForm">
+<input type="text" name="prenom" placeholder="Votre prénom ou pseudo" required />
+<input type="email" name="email" placeholder="Votre adresse e-mail" required />
+
+<select name="materiel" required>
+<option disabled selected>Que pensez-vous de notre matériel ?</option>
+<option>Excellent (propre, pratique, de qualité)</option>
+<option>Correct</option>
+<option>Décevant</option>
+</select>
+
+<select name="service" required>
+<option disabled selected>Notre service a-t-il répondu à vos attentes ?</option>
+<option>Oui, ponctuel et professionnel</option>
+<option>Moyennement</option>
+<option>Pas du tout</option>
+</select>
+
+<input type="text" name="difficultes" placeholder="Avez-vous rencontré des difficultés ?" />
+
+<select name="recommandation" required>
+<option disabled selected>Nous recommanderiez-vous ?</option>
+<option>Oui, avec plaisir</option>
+<option>Peut-être</option>
+<option>Non</option>
+</select>
+
+<textarea name="commentaire" placeholder="Un petit mot ou suggestion ?"></textarea>
+
+<button type="submit">Envoyer mon avis</button>
+</form>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
