@@ -1,22 +1,33 @@
-document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+document.getElementById("avisForm").addEventListener("submit", function(event){
 event.preventDefault();
 
-// Récupération des valeurs
-const name = document.querySelector('input[name="name"]').value;
-const email = document.querySelector('input[name="email"]').value;
-const materiel = document.querySelector('select[name="materiel"]').value;
-const commentaire = document.querySelector('textarea[name="commentaire"]').value;
+// Affichage des confettis dorés
+const confettiSettings = {
+target: 'canvas',
+max: 150,
+size: 1.2,
+animate: true,
+props: ['circle'],
+colors: [
+[255,215,0], // or doré
+[255,223,0], // jaune chic
+[255,240,140] // doré clair
+]
+};
+const confetti = new ConfettiGenerator(confettiSettings);
+confetti.render();
 
-// Construction du message à enregistrer
-const message = `⭐️ Nouvel avis client :
-Nom/Pseudo : ${name}
-Email : ${email}
-Matériel : ${materiel}
-Commentaire : ${commentaire}`;
-
-// Affiche dans la console (à remplacer plus tard par un envoi réel)
-console.log(message);
-
-// Redirection vers la page de remerciement
-window.location.href = "remerciement.html";
+setTimeout(() => {
+alert("Merci pour votre avis !");
+}, 1000);
 });
+
+// Chargement de la bibliothèque Confetti
+const script = document.createElement('script');
+script.src = 'https://cdn.jsdelivr.net/npm/confetti-js@0.0.18/dist/index.min.js';
+document.head.appendChild(script);
+
+// Ajout dynamique du canvas confetti
+const canvas = document.createElement("canvas");
+canvas.id = "canvas";
+document.body.appendChild(canvas);
