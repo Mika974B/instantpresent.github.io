@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Merci pour votre retour</title>
+<link rel="stylesheet" href="style.css" />
+<style>
+.confetti {
+position: fixed;
+top: -10px;
+width: 10px;
+height: 10px;
+background: gold;
+opacity: 0.9;
+animation: fall 3s linear infinite;
+border-radius: 50%;
+z-index: 9999;
+}
+
+@keyframes fall {
+to {
+transform: translateY(100vh) rotate(360deg);
+}
+}
+
+.merci-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+text-align: center;
+color: white;
+}
+
+.merci-container h1 {
+font-size: 2.5em;
+margin-bottom: 1rem;
+}
+
+.merci-container p {
+font-size: 1.2em;
+}
+</style>
+</head>
+<body>
+<div class="merci-container">
+<img src="logo_animated.gif" alt="Logo animé" class="logo animé" />
+<h1>🎉 Merci pour votre retour !</h1>
+<p>Votre message a bien été transmis à notre équipe.<br/>
+Si besoin, notre service satisfaction reviendra vers vous très vite.</p>
+</div>
+
+<script>
+for (let i = 0; i < 100; i++) {
+const confetti = document.createElement("div");
+confetti.classList.add("confetti");
+document.body.appendChild(confetti);
+
+confetti.style.left = Math.random() * 100 + "vw";
+confetti.style.animationDelay = Math.random() * 2 + "s";
+
+setTimeout(() => confetti.remove(), 5000);
+}
+</script>
+</body>
+</html>
