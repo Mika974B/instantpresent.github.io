@@ -2,7 +2,7 @@
 body {
 margin: 0;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-background: url('fond.jpg') no-repeat center center;
+background: url('fond.jpg') no-repeat center center fixed;
 background-attachment: fixed;
 background-size: cover;
 color: #ffffff;
@@ -15,76 +15,80 @@ margin: 5vh auto;
 padding: 2rem;
 background: rgba(0, 0, 0, 0.75);
 border-radius: 12px;
-box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+box-shadow: 0 15px rgba(255, 255, 255, 0.2);
 }
 
 /* Logo animé */
 .logo {
 display: block;
 max-width: 180px;
-margin: 0 auto 1.5rem auto;
+margin: auto 1.5rem auto;
 animation: float 3s ease-in-out infinite;
 }
 
 /* Animation du logo */
 @keyframes float {
-0% { transform: translateY(0); }
-50% { transform: translateY(-10px); }
-100% { transform: translateY(0); }
+0%, 100% {
+transform: translateY(0px);
+}
+50% {
+transform: translateY(-10px);
+}
 }
 
 /* Titre */
-h1 {
+h2 {
 text-align: center;
 font-size: 1.8rem;
-margin-bottom: 2rem;
-color: #f5f5f5;
-}
-
-/* Champs du formulaire */
-form input,
-form select,
-form textarea {
-width: 100%;
-margin-bottom: 1rem;
-padding: 0.75rem;
-border: none;
-border-radius: 6px;
-font-size: 1rem;
-}
-
-/* Textearea spécifique */
-form textarea {
-resize: vertical;
-height: 100px;
-}
-
-/* Bouton d’envoi */
-form button {
-background: linear-gradient(90deg, gold, goldenrod);
-color: #000;
+margin-bottom: 30px;
 font-weight: bold;
-padding: 0.9rem;
+}
+
+/* Formulaire */
+form {
+display: flex;
+flex-direction: column;
+gap: 15px;
+}
+
+/* Champs */
+input, select, textarea, button {
+padding: 12px;
+border-radius: 8px;
 border: none;
-border-radius: 6px;
-cursor: pointer;
 font-size: 1rem;
-transition: transform 0.2s ease;
+width: 100%;
 }
 
-form button:hover {
-transform: scale(1.05);
-box-shadow: 0 0 8px gold;
+/* Bouton */
+button {
+background-color: gold;
+font-weight: bold;
+color: #000;
+cursor: pointer;
+transition: 0.3s;
 }
 
-/* Responsive mobile */
-@media screen and (max-width: 600px) {
-.container {
-margin: 2vh 1rem;
-padding: 1.5rem;
+button:hover {
+background-color: #ffcc00;
 }
 
-.logo {
-max-width: 140px;
+/* Texte de remerciement */
+.thanks {
+font-size: 1.5em;
+font-weight: bold;
+color: white;
+margin-top: 30px;
+text-align: center;
 }
+
+/* Confettis */
+.confetti {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+pointer-events: none;
+z-index: 9999;
 }
