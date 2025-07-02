@@ -1,55 +1,36 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Laissez votre avis – L’Instant Présent</title>
-<link rel="stylesheet" href="style.css" />
-</head>
 <body>
-<img src="logo-instant-present.png" alt="Logo" style="width: 150px; margin-bottom: 20px;" />
-
+<div class="container">
+<img src="logo-instant-present.png" alt="Logo" class="logo" />
 <h2>Laissez-nous votre avis</h2>
-
 <form action="https://formsubmit.io/send/contact@instantpresent.re" method="POST">
-<!-- Redirection automatique -->
-<input type="hidden" name="_redirect" value="https://avis.instantpresent.re/remerciement.html" />
-<!-- Protection FormSubmit -->
-<input type="text" name="_formsubmit_id" style="display:none">
-
+<input type="hidden" name="_redirect" value="https://avis.instantpresent.re/remerciement.html">
 <input type="text" name="Nom" placeholder="Votre prénom ou pseudo" required />
 <input type="email" name="Email" placeholder="Votre adresse e-mail" required />
-
 <select name="Matériel" required>
 <option value="" disabled selected>Que pensez-vous de notre matériel ?</option>
-<option>Excellent (propre, pratique, de qualité)</option>
-<option>Correct (quelques détails à revoir)</option>
-<option>Moyen (matériel pas adapté)</option>
+<option>Excellent</option>
+<option>Correct</option>
+<option>Moyen</option>
 </select>
-
 <select name="Service" required>
 <option value="" disabled selected>Notre service a-t-il répondu à vos attentes ?</option>
-<option>Oui, ponctuel et professionnel</option>
-<option>Correct, avec quelques oublis</option>
-<option>Non, déçu de la prestation</option>
+<option>Oui</option>
+<option>Pas vraiment</option>
 </select>
-
-<input type="text" name="Difficulté" placeholder="Avez-vous rencontré des difficultés ?" />
-
-<select name="Recommandation" required>
+<select name="Difficultés" required>
+<option value="" disabled selected>Avez-vous rencontré des difficultés ?</option>
+<option>Non</option>
+<option>Oui, petites</option>
+<option>Oui, importantes</option>
+</select>
+<select name="Recommande" required>
 <option value="" disabled selected>Nous recommanderiez-vous ?</option>
 <option>Oui, avec plaisir</option>
 <option>Peut-être</option>
 <option>Non</option>
 </select>
-
-<textarea name="Commentaire" placeholder="Un dernier mot à nous dire ?" rows="4"></textarea>
-
+<textarea name="Commentaire" placeholder="Un dernier mot à nous dire ?"></textarea>
 <button type="submit">Envoyer mon avis</button>
 </form>
-
-<canvas class="confetti" id="confetti-canvas"></canvas>
-
-<script src="script.js"></script>
+</div>
 </body>
-</html>
