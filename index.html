@@ -2,47 +2,169 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Votre avis compte - L’Instant Présent</title>
-<link rel="stylesheet" href="style.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Laissez votre avis – L’Instant Présent</title>
+<style>
+body {
+font-family: sans-serif;
+background: url('https://i.imgur.com/zr7VXqb.jpg') no-repeat center center fixed;
+background-size: cover;
+color: white;
+text-align: center;
+padding: 20px;
+}
+form {
+background-color: rgba(0,0,0,0.8);
+border-radius: 10px;
+padding: 20px;
+display: inline-block;
+max-width: 400px;
+width: 100%;
+}
+input, select, textarea, button {
+width: 100%;
+padding: 10px;
+margin: 10px 0;
+border-radius: 5px;
+border: none;
+}
+button {
+background: gold;
+font-weight: bold;
+cursor: pointer;
+}
+.thanks {
+display: none;
+font-size: 1.5em;
+font-weight: bold;
+color: gold;
+margin-top: 30px;
+}
+.confetti {
+position: fixed;
+top: 0; left: 0; width: 100%; height: 100%;
+pointer-events: none;
+z-index: 9999;
+}
+</style>
 </head>
 <body>
-<div class="container">
-<img src="logo-instant-present.png" alt="Logo L'instant Présent" style="max-width: 150px; display: block; margin: 20px auto;" />
-<h1>Laissez-nous votre avis</h1>
+<img src="https://i.imgur.com/0zIFHFH.png" alt="Logo" style="width: 150px; margin-bottom: 20px;"/>
+<h2>Laissez-nous votre avis</h2>
 <form id="avisForm">
-<input type="text" name="prenom" placeholder="Votre prénom ou pseudo" required />
-<input type="email" name="email" placeholder="Votre adresse e-mail" required />
-
-<select name="materiel" required>
-<option disabled selected>Que pensez-vous de notre matériel ?</option>
+<input type="text" name="Nom" placeholder="Votre prénom ou pseudo" required />
+<input type="email" name="Email" placeholder="Votre adresse e-mail" required />
+<select name="Matériel" required>
+<option value="" disabled selected>Que pensez-vous de notre matériel ?</option>
 <option>Excellent (propre, pratique, de qualité)</option>
-<option>Correct</option>
-<option>Décevant</option>
+<option>Correct (quelques détails à revoir)</option>
+<option>Moyen (matériel pas adapté)</option>
 </select>
-
-<select name="service" required>
-<option disabled selected>Notre service a-t-il répondu à vos attentes ?</option>
+<select name="Service" required>
+<option value="" disabled selected>Notre service a-t-il répondu à vos attentes ?</option>
 <option>Oui, ponctuel et professionnel</option>
-<option>Moyennement</option>
-<option>Pas du tout</option>
+<option>Correct, avec des améliorations possibles</option>
+<option>Non, expérience à revoir</option>
 </select>
-
-<input type="text" name="difficultes" placeholder="Avez-vous rencontré des difficultés ?" />
-
-<select name="recommandation" required>
-<option disabled selected>Nous recommanderiez-vous ?</option>
+<input type="text" name="Difficulté" placeholder="Avez-vous rencontré des difficultés ?" />
+<select name="Recommande" required>
+<option value="" disabled selected>Nous recommanderiez-vous ?</option>
 <option>Oui, avec plaisir</option>
 <option>Peut-être</option>
 <option>Non</option>
 </select>
-
-<textarea name="commentaire" placeholder="Un petit mot ou suggestion ?"></textarea>
-
+<textarea name="Commentaire" rows="3" placeholder="Laissez un commentaire libre ici..."></textarea>
 <button type="submit">Envoyer mon avis</button>
-<form id="avisForm" action="merci.html" method="GET">
+</form>
+
+<div class="thanks" id="merciMessage">
+🎉 Merci pour votre retour !<br/>
+Notre service satisfaction vous répondra si besoin.
 </div>
 
-<script src="script.js"></script>
+<canvas class="confetti" id="confettiCanvas"></canvas>
+
+<script>
+const form = document.getElementById("avisForm");
+const merci = document.getElementById("merciMessage");
+const canvas = document.getElementById("confettiCanvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+form.addEventListener("submit", function(e) {
+e.preventDefault();
+
+const data = new FormData(form);
+const message = [...data.entries()].map(([key, value]) => `${key}: ${value}`).join('\n');
+
+fetch("https://formspree.io/f/xvoeyqoo", {
+method: "POST",
+headers: {
+'Accept': 'application/json'
+},
+body: data
+}).then(response => {
+if (response.ok) {
+form.style.display = "none";
+merci.style.display = "block";
+startConfetti();
+} else {
+alert("Erreur lors de l'envoi du formulaire.");
+}
+});
+});
+
+// CONFETTI
+let particles = [];
+for(let i = 0; i < 150; i++) {
+particles.push({
+x: Math.random() * canvas.width,
+y: Math.random() * canvas.height,
+r: Math.random() * 4 + 1,
+d: Math.random() * 150
+});
+}
+
+function draw() {
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+ctx.fillStyle = "gold";
+ctx.beginPath();
+for(let i = 0; i < particles.length; i++) {
+let p = particles[i];
+ctx.moveTo(p.x, p.y);
+ctx.arc(p.x, p.y, p.r, 0, Math.PI*2, true);
+}
+ctx.fill();
+update();
+}
+
+let angle = 0;
+function update() {
+angle += 0.01;
+for(let i = 0; i < particles.length; i++) {
+let p = particles[i];
+p.y += Math.cos(angle + p.d) + 1 + p.r / 2;
+p.x += Math.sin(angle) * 2;
+
+if(p.x > canvas.width + 5 || p.x < -5 || p.y > canvas.height) {
+if(i % 3 > 0) {
+particles[i] = {x: Math.random() * canvas.width, y: -10, r: p.r, d: p.d};
+} else {
+if(Math.sin(angle) > 0) {
+particles[i] = {x: -5, y: Math.random() * canvas.height, r: p.r, d: p.d};
+} else {
+particles[i] = {x: canvas.width + 5, y: Math.random() * canvas.height, r: p.r, d: p.d};
+}
+}
+}
+}
+}
+
+function startConfetti() {
+setInterval(draw, 33);
+}
+</script>
 </body>
 </html>
