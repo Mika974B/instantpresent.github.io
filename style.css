@@ -1,75 +1,54 @@
-/* Style général */
+/* Fond général */
 body {
 margin: 0;
-padding: 0;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-family: 'Segoe UI', Tahoma, sans-serif;
 background: url('fond.jpg') no-repeat center center fixed;
 background-size: cover;
-color: #ffffff;
-display: flex;
-align-items: center;
-justify-content: center;
-min-height: 100vh;
+color: white;
 }
 
-/* Container principal */
+/* Conteneur centré */
 .container {
-background-color: rgba(0, 0, 0, 0.6);
-padding: 40px 20px;
-border-radius: 12px;
+background-color: rgba(0, 0, 0, 0.7);
 max-width: 600px;
-width: 90%;
-box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+margin: 5vh auto;
+padding: 30px;
+border-radius: 15px;
+box-shadow: 0 0 30px rgba(0,0,0,0.5);
 text-align: center;
 }
 
-/* Logo */
+/* Logo animé */
 .logo {
+width: 120px;
 display: block;
-max-width: 150px;
 margin: 0 auto 20px auto;
 }
 
-/* Titre */
-h2 {
-font-size: 1.8rem;
-margin-bottom: 25px;
+/* Formulaire */
+form {
+display: flex;
+flex-direction: column;
+gap: 15px;
 }
 
-/* Champs formulaire */
-form input,
-form select,
-form textarea {
-width: 100%;
+input, select, textarea {
 padding: 12px;
-margin-bottom: 15px;
 border: none;
-border-radius: 6px;
+border-radius: 8px;
 font-size: 1rem;
-box-sizing: border-box;
 }
 
-/* Bouton */
 button {
-width: 100%;
+padding: 12px;
 background-color: gold;
 color: black;
-font-weight: bold;
-padding: 12px;
 border: none;
-border-radius: 6px;
+border-radius: 8px;
+font-weight: bold;
 cursor: pointer;
-transition: background-color 0.3s ease;
 }
 
 button:hover {
 background-color: #ffd700;
-}
-
-/* Message de remerciement */
-.thanks {
-font-size: 1.5rem;
-font-weight: bold;
-color: white;
-margin-top: 30px;
 }
