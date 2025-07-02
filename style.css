@@ -1,94 +1,75 @@
-/* Police générale */
+/* Style général */
 body {
 margin: 0;
+padding: 0;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 background: url('fond.jpg') no-repeat center center fixed;
-background-attachment: fixed;
 background-size: cover;
 color: #ffffff;
+display: flex;
+align-items: center;
+justify-content: center;
+min-height: 100vh;
 }
 
 /* Container principal */
 .container {
-max-width: 600px;
-margin: 5vh auto;
-padding: 2rem;
-background: rgba(0, 0, 0, 0.75);
+background-color: rgba(0, 0, 0, 0.6);
+padding: 40px 20px;
 border-radius: 12px;
-box-shadow: 0 15px rgba(255, 255, 255, 0.2);
+max-width: 600px;
+width: 90%;
+box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+text-align: center;
 }
 
-/* Logo animé */
+/* Logo */
 .logo {
 display: block;
-max-width: 180px;
-margin: auto 1.5rem auto;
-animation: float 3s ease-in-out infinite;
-}
-
-/* Animation du logo */
-@keyframes float {
-0%, 100% {
-transform: translateY(0px);
-}
-50% {
-transform: translateY(-10px);
-}
+max-width: 150px;
+margin: 0 auto 20px auto;
 }
 
 /* Titre */
 h2 {
-text-align: center;
 font-size: 1.8rem;
-margin-bottom: 30px;
-font-weight: bold;
+margin-bottom: 25px;
 }
 
-/* Formulaire */
-form {
-display: flex;
-flex-direction: column;
-gap: 15px;
-}
-
-/* Champs */
-input, select, textarea, button {
-padding: 12px;
-border-radius: 8px;
-border: none;
-font-size: 1rem;
+/* Champs formulaire */
+form input,
+form select,
+form textarea {
 width: 100%;
+padding: 12px;
+margin-bottom: 15px;
+border: none;
+border-radius: 6px;
+font-size: 1rem;
+box-sizing: border-box;
 }
 
 /* Bouton */
 button {
+width: 100%;
 background-color: gold;
+color: black;
 font-weight: bold;
-color: #000;
+padding: 12px;
+border: none;
+border-radius: 6px;
 cursor: pointer;
-transition: 0.3s;
+transition: background-color 0.3s ease;
 }
 
 button:hover {
-background-color: #ffcc00;
+background-color: #ffd700;
 }
 
-/* Texte de remerciement */
+/* Message de remerciement */
 .thanks {
-font-size: 1.5em;
+font-size: 1.5rem;
 font-weight: bold;
 color: white;
 margin-top: 30px;
-text-align: center;
-}
-
-/* Confettis */
-.confetti {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-pointer-events: none;
-z-index: 9999;
 }
